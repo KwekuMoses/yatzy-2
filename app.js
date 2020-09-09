@@ -14,3 +14,30 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
   });
 });
+
+function isFullHouse(inputArray) {
+  let diceOne = [];
+  let diceTwo = [];
+  diceOne.push(inputArray[0]);
+
+  for (let i = 1; i < inputArray.length; i++) {
+    if (inputArray[i] === diceOne[0]) {
+      diceOne.push(inputArray[i]);
+    } else if (diceTwo.length === 0) {
+      diceTwo.push(inputArray[i]);
+    } else if (inputArray[i] === diceTwo[0]) {
+      diceTwo.push(inputArray[i]);
+    }
+  }
+
+  if (
+    (diceTwo.length === 3 && diceOne.length === 2) ||
+    (diceTwo.length === 2 && diceOne.length === 3)
+  ) {
+    return true;
+  }
+  return false;
+}
+let myArray = [];
+
+console.log(isFullHouse(myArray));
