@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function (e) {
   let countSumButton = document.getElementById("count-sum");
-  let sumPlayerA = document.getElementById("sum-player-a").innerHTML;
-
+  let sumPlayerA = document.getElementById("sum-player-a");
+  let playerABonus = document.getElementById("player-a-bonus");
   countSumButton.addEventListener("click", function (e) {
     let resultPlayerAArray = [];
-
+    let sum = 0;
     for (let i = 0; i < 6; i++) {
-      resultPlayerAArray.push(
-        Number(document.getElementById("a" + (i + 1)).value)
-      );
+      sum += Number(document.getElementById("a" + (i + 1)).value);
     }
-    console.log(resultPlayerAArray);
+    sumPlayerA.innerHTML = sum;
+    if (sum >= 63) {
+      playerABonus.innerHTML = 50;
+    }
   });
-  sumPlayerA.textContent = "Hejsan";
 });
