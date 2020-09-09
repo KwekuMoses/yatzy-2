@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
     let resultPlayerAArray = [];
 
     for (let i = 0; i < 6; i++) {
-      resultPlayerAArray.push(document.getElementById("a" + (i + 1)).value);
+      resultPlayerAArray.push(
+        Number(document.getElementById("a" + (i + 1)).value)
+      );
     }
     console.log(resultPlayerAArray);
   });
