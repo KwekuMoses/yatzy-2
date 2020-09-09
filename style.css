@@ -78,10 +78,6 @@ input {
   padding: none;
 }
 
-input:focus {
-  transform: scale(1.5);
-}
-
 .enclosure {
   display: flex;
   justify-content: space-between;
