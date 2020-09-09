@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Yatzy</title>
+  </head>
+  <body>
+    <header>
+      <h1>Yatzy</h1>
+      <div class="nav">
+        <div class="profile-friends">Min Profil</div>
+        <div class="profile-friends">Vänner</div>
+      </div>
+    </header>
+    <div class="enclosure">
+      <form>
+        <table>
+          <tbody>
+            <tr class="gray-row">
+              <th>Spelare/Player</th>
+              <td class="form-cell"><input type="text" class="gray-row" /></td>
+              <td class="form-cell"><input type="text" class="gray-row" /></td>
+              <td class="form-cell"><input type="text" class="gray-row" /></td>
+              <td class="form-cell"><input type="text" class="gray-row" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Ettor/Ones</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" id="a1" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Tvåor/Twos</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" id="a2" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Treor/Threes</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" id="a3" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Fyror/Fours</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" id="a4" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Femmor/Fives</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" id="a5" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Sexor/Sixes</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" id="a6" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr class="gray-row">
+              <th>
+                Summa/Sum
+                <button id="count-sum" type="button">Räkna ut</button>
+              </th>
+              <td class="form-cell" class="gray-row">
+                <p id="sum-player-a"></p>
+              </td>
+              <td class="form-cell"><input type="text" class="gray-row" /></td>
+              <td class="form-cell"><input type="text" class="gray-row" /></td>
+              <td class="form-cell"><input type="text" class="gray-row" /></td>
+            </tr>
+            <tr class="gray-row">
+              <th>Bonus</th>
+              <td class="form-cell"><input type="text" class="gray-row" /></td>
+              <td class="form-cell"><input type="text" class="gray-row" /></td>
+              <td class="form-cell"><input type="text" class="gray-row" /></td>
+              <td class="form-cell"><input type="text" class="gray-row" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Par/Pair</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Två par/Two pairs</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Tretal/Three of a kind</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Fyrtal/Four of a kind</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Liten stege/Small straight</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Stor stege/Large straight</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Kåk/Full house</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Chans/Chance</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="white-cell">Yatzy</td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+              <td class="form-cell darker-cell">
+                <input type="text" class="darker-cell" />
+              </td>
+              <td class="form-cell white-cell"><input type="text" /></td>
+            </tr>
+          </tbody>
+          <tfoot class="gray-row">
+            <th>Totalt/Total</th>
+            <td class="form-cell"><input type="text" class="gray-row" /></td>
+            <td class="form-cell"><input type="text" class="gray-row" /></td>
+            <td class="form-cell"><input type="text" class="gray-row" /></td>
+            <td class="form-cell"><input type="text" class="gray-row" /></td>
+          </tfoot>
+        </table>
+      </form>
+      <div class="chat">
+        <div class="text-mock">
+          <span class="user">Gustaf:</span> Hejsan, mr.President! <br />
+          <span class="user">Obama:</span> Jag måste bara säga, Gustaf, att du
+          är bäst! <br />
+          <span class="user">Gustaf:</span> Tack kära du.
+        </div>
+        <div class="chat-input">
+          <button class="submit-button">Submit</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

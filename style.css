@@ -1,0 +1,122 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(images/HandDice.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+h1 {
+  color: #fbf7e8;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+.profile-friends {
+  background-color: #fbf7e8;
+  color: #042d56;
+  text-align: center;
+  width: 100px;
+  margin: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.profile-friends:hover {
+  background-color: #042d56;
+  color: #fbf7e8;
+}
+
+table {
+  border: 1.5px solid;
+  border-collapse: collapse;
+  margin-left: 50px;
+  color: #042d56;
+}
+.white-cell {
+  background-color: white;
+}
+.darker-cell {
+  background-color: #b4b4b4;
+}
+
+.gray-row {
+  background-color: #656975;
+}
+
+th {
+  border: 1.5px solid;
+  background-color: #9d9ea0;
+  text-align: start;
+}
+
+td {
+  border: 1.5px solid;
+}
+
+.form-cell {
+  border: 1.5px solid;
+  width: 70px;
+}
+
+input {
+  width: 70px;
+  border: none;
+  outline: none;
+  margin: none;
+  padding: none;
+}
+
+input:focus {
+  transform: scale(1.5);
+}
+
+.enclosure {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 500px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.text-mock {
+  color: #656975;
+  margin: 5px;
+}
+.user {
+  color: #fdfcf5;
+}
+.chat-input {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 500px;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+.submit-button {
+  justify-content: end;
+  background-color: #fbf7e8;
+  color: #042d56;
+  border: none;
+  opacity: 0.5;
+}
+.submit-button:hover {
+  background-color: #042d56;
+  color: #fbf7e8;
+}
