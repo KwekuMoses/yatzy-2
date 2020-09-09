@@ -12,4 +12,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
     console.log(resultPlayerAArray);
   });
+  sumPlayerA.textContent = "Hejsan";
 });
