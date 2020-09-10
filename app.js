@@ -35,6 +35,7 @@ function isFullHouse(inputArray) {
   ) {
     return true;
   }
+
   return false;
 }
 
