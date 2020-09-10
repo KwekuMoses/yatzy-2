@@ -1,16 +1,39 @@
 document.addEventListener("DOMContentLoaded", function (e) {
+  class PlayerObject {
+    constructor(letter) {
+      this.letter = letter;
+    }
+
+    playerSumAndBonus() {
+      let sum = 0;
+      let outputSum = document.getElementById(`sum-player-${this.letter}`);
+
+      //counts the sum of this players points
+      for (let i = 0; i < 6; i++) {
+        let currentCell = Number(document.getElementById(this.letter + (i + 1)).value); //counts the sum of this players points
+        sum += currentCell;
+      }
+
+      outputSum.innerHTML = sum; //outputs the sum of this players points
+
+      if (sum >= 63) {
+        document.getElementById(`player-${this.letter}-bonus`).innerHTML = 50; //checks if bonus is deserved
+      }
+    }
+  }
+
   let countSumButton = document.getElementById("count-sum");
-  let sumPlayerA = document.getElementById("sum-player-a");
-  let playerABonus = document.getElementById("player-a-bonus");
+
   countSumButton.addEventListener("click", function (e) {
-    let sum = 0;
-    for (let i = 0; i < 6; i++) {
-      sum += Number(document.getElementById("a" + (i + 1)).value);
-    }
-    sumPlayerA.innerHTML = sum;
-    if (sum >= 63) {
-      playerABonus.innerHTML = 50;
-    }
+    //making an object for each player
+    let playerAObject = new PlayerObject("a");
+    let playerBObject = new PlayerObject("b");
+    let playerCObject = new PlayerObject("c");
+    let playerDObject = new PlayerObject("d");
+    playerAObject.playerSumAndBonus();
+    playerBObject.playerSumAndBonus();
+    playerCObject.playerSumAndBonus();
+    playerDObject.playerSumAndBonus();
   });
 });
 

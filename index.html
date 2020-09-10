@@ -34,83 +34,107 @@
               <td class="form-cell darker-cell">
                 <input type="number" class="darker-cell" id="a1" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
+              <td class="form-cell white-cell">
+                <input type="number" id="b1" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+              <td class="form-cell darker-cell">
+                <input type="number" class="darker-cell" id="c1" />
+              </td>
+              <td class="form-cell white-cell">
+                <input type="number" id="d1" />
+              </td>
             </tr>
             <tr>
               <td class="white-cell">Tvåor/Twos</td>
               <td class="form-cell darker-cell">
                 <input type="number" class="darker-cell" id="a2" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
+              <td class="form-cell white-cell">
+                <input type="number" id="b2" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+              <td class="form-cell darker-cell">
+                <input type="number" class="darker-cell" id="c2" />
+              </td>
+              <td class="form-cell white-cell">
+                <input type="number" id="d2" />
+              </td>
             </tr>
             <tr>
               <td class="white-cell">Treor/Threes</td>
               <td class="form-cell darker-cell">
                 <input type="number" class="darker-cell" id="a3" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
+              <td class="form-cell white-cell">
+                <input type="number" id="b3" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+              <td class="form-cell darker-cell">
+                <input type="number" class="darker-cell" id="c3" />
+              </td>
+              <td class="form-cell white-cell">
+                <input type="number" id="d3" />
+              </td>
             </tr>
             <tr>
               <td class="white-cell">Fyror/Fours</td>
               <td class="form-cell darker-cell">
                 <input type="number" class="darker-cell" id="a4" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
+              <td class="form-cell white-cell">
+                <input type="number" id="b4" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+              <td class="form-cell darker-cell">
+                <input type="number" class="darker-cell" id="c4" />
+              </td>
+              <td class="form-cell white-cell">
+                <input type="number" id="d4" />
+              </td>
             </tr>
             <tr>
               <td class="white-cell">Femmor/Fives</td>
               <td class="form-cell darker-cell">
                 <input type="number" class="darker-cell" id="a5" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
+              <td class="form-cell white-cell">
+                <input type="number" id="b5" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+              <td class="form-cell darker-cell">
+                <input type="number" class="darker-cell" id="c5" />
+              </td>
+              <td class="form-cell white-cell">
+                <input type="number" id="d5" />
+              </td>
             </tr>
             <tr>
               <td class="white-cell">Sexor/Sixes</td>
               <td class="form-cell darker-cell">
                 <input type="number" class="darker-cell" id="a6" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
+              <td class="form-cell white-cell">
+                <input type="number" id="b6" />
               </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+              <td class="form-cell darker-cell">
+                <input type="number" class="darker-cell" id="c6" />
+              </td>
+              <td class="form-cell white-cell">
+                <input type="number" id="d6" />
+              </td>
             </tr>
             <tr class="gray-row">
               <th>
                 Summa/Sum
                 <button id="count-sum" type="button">Räkna ut</button>
               </th>
-              <td class="form-cell" class="gray-row" id="sum-player-a"></td>
-              <td class="form-cell"></td>
-              <td class="form-cell"></td>
-              <td class="form-cell"></td>
+              <td class="form-cell" id="sum-player-a"></td>
+              <td class="form-cell" id="sum-player-b"></td>
+              <td class="form-cell" id="sum-player-c"></td>
+              <td class="form-cell" id="sum-player-d"></td>
             </tr>
             <tr class="gray-row">
               <th>Bonus</th>
               <td class="form-cell" id="player-a-bonus"></td>
-              <td class="form-cell"></td>
-              <td class="form-cell"></td>
-              <td class="form-cell"></td>
+              <td class="form-cell" id="player-b-bonus"></td>
+              <td class="form-cell" id="player-c-bonus"></td>
+              <td class="form-cell" id="player-d-bonus"></td>
             </tr>
             <tr>
               <td class="white-cell">Par/Pair</td>
@@ -224,8 +248,8 @@
       <div class="chat">
         <div class="text-mock">
           <span class="user">Gustaf:</span> Hejsan, mr.President! <br />
-          <span class="user">Obama:</span> Jag måste bara säga, Gustaf, att du
-          är bäst! <br />
+          <span class="user">Obama:</span> Jag måste bara säga, Gustaf, att du är bäst!
+          <br />
           <span class="user">Gustaf:</span> Tack kära du.
         </div>
         <div class="chat-input">
