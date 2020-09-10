@@ -22,14 +22,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
   }
 
+  //making an object for each player
+  let playerAObject = new PlayerObject("a");
+  let playerBObject = new PlayerObject("b");
+  let playerCObject = new PlayerObject("c");
+  let playerDObject = new PlayerObject("d");
   let countSumButton = document.getElementById("count-sum");
 
   countSumButton.addEventListener("click", function (e) {
-    //making an object for each player
-    let playerAObject = new PlayerObject("a");
-    let playerBObject = new PlayerObject("b");
-    let playerCObject = new PlayerObject("c");
-    let playerDObject = new PlayerObject("d");
     playerAObject.playerSumAndBonus();
     playerBObject.playerSumAndBonus();
     playerCObject.playerSumAndBonus();
