@@ -29,8 +29,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
   let playerBObject = new PlayerObject("b");
   let playerCObject = new PlayerObject("c");
   let playerDObject = new PlayerObject("d");
-  //let countSumButton = document.getElementById("count-sum");
   let wholeForm = document.getElementById("whole-form");
+  let throwButton = document.getElementById("throw-dice");
+
+  throwButton.addEventListener("click" function (e) {
+    
+  });
 
   wholeForm.addEventListener("change", function (e) {
     playerAObject.playerSumAndBonus();
