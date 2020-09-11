@@ -62,6 +62,6 @@ function isFullHouse(inputArray) {
   return false;
 }
 
-let myArray = [];
+let myArray = [1];
 
 console.log(isFullHouse(myArray));

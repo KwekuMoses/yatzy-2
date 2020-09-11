@@ -9,6 +9,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#dices{
+  background-color: red;
+  
+}
 header {
   background-color: rgba(0, 0, 0, 0.2);
   margin-bottom: 50px;
