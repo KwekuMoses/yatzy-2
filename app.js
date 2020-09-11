@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
       if (sum >= 63) {
         document.getElementById(`player-${this.letter}-bonus`).innerHTML = 50; //checks if bonus is deserved
+      } else {
+        document.getElementById(`player-${this.letter}-bonus`).innerHTML = 0;
       }
     }
   }
@@ -27,9 +29,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
   let playerBObject = new PlayerObject("b");
   let playerCObject = new PlayerObject("c");
   let playerDObject = new PlayerObject("d");
-  let countSumButton = document.getElementById("count-sum");
+  //let countSumButton = document.getElementById("count-sum");
+  let wholeForm = document.getElementById("whole-form");
 
-  countSumButton.addEventListener("click", function (e) {
+  wholeForm.addEventListener("change", function (e) {
     playerAObject.playerSumAndBonus();
     playerBObject.playerSumAndBonus();
     playerCObject.playerSumAndBonus();
