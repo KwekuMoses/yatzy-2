@@ -10,9 +10,8 @@ body {
   background-size: cover;
 }
 
-#dices{
+#dices form{
   background-color: red;
-  
 }
 header {
   background-color: rgba(0, 0, 0, 0.2);
