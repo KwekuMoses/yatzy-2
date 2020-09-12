@@ -11,7 +11,6 @@
     <title>Yatzy</title>
   </head>
   <body>
-    
     <header>
       <h1>Yatzy</h1>
       <div class="nav">
@@ -20,259 +19,177 @@
       </div>
     </header>
     <div class="enclosure">
-      <form autocomplete="off" id="whole-form">
+      <form id="whole-form" class="whole-table">
         <table>
           <tbody>
-            <tr class="gray-row">
+            <tr class="headers">
               <th>Spelare/Player</th>
-              <td class="form-cell"><input type="text" class="gray-row" /></td>
-              <td class="form-cell"><input type="text" class="gray-row" /></td>
-              <td class="form-cell"><input type="text" class="gray-row" /></td>
-              <td class="form-cell"><input type="text" class="gray-row" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Ettor/Ones</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="a1" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="b1" />
-              </td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="c1" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="d1" />
-              </td>
+            <tr class="bodies">
+              <th>Ettor/Ones</th>
+              <td><input type="number" id="a1" /></td>
+              <td><input type="number" id="b1" /></td>
+              <td><input type="number" id="c1" /></td>
+              <td><input type="number" id="d1" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Tvåor/Twos</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="a2" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="b2" />
-              </td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="c2" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="d2" />
-              </td>
+            <tr class="bodies">
+              <th>Tvåor/Twos</th>
+              <td><input type="number" id="a2" /></td>
+              <td><input type="number" id="b2" /></td>
+              <td><input type="number" id="c2" /></td>
+              <td><input type="number" id="d2" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Treor/Threes</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="a3" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="b3" />
-              </td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="c3" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="d3" />
-              </td>
+            <tr class="bodies">
+              <th>Treor/Threes</th>
+              <td><input type="number" id="a3" /></td>
+              <td><input type="number" id="b3" /></td>
+              <td><input type="number" id="c3" /></td>
+              <td><input type="number" id="d3" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Fyror/Fours</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="a4" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="b4" />
-              </td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="c4" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="d4" />
-              </td>
+            <tr class="bodies">
+              <th>Fyror/Fours</th>
+              <td><input type="number" id="a4" /></td>
+              <td><input type="number" id="b4" /></td>
+              <td><input type="number" id="c4" /></td>
+              <td><input type="number" id="d4" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Femmor/Fives</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="a5" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="b5" />
-              </td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="c5" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="d5" />
-              </td>
+            <tr class="bodies">
+              <th>Femmor/Fives</th>
+              <td><input type="number" id="a5" /></td>
+              <td><input type="number" id="b5" /></td>
+              <td><input type="number" id="c5" /></td>
+              <td><input type="number" id="d5" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Sexor/Sixes</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="a6" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="b6" />
-              </td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" id="c6" />
-              </td>
-              <td class="form-cell white-cell">
-                <input type="number" id="d6" />
-              </td>
+            <tr class="bodies">
+              <th>Sexor/Sixes</th>
+              <td><input type="number" id="a6" /></td>
+              <td><input type="number" id="b6" /></td>
+              <td><input type="number" id="c6" /></td>
+              <td><input type="number" id="d6" /></td>
             </tr>
-            <tr class="gray-row">
+            <tr class="headers">
               <th>Summa/Sum</th>
-              <td class="form-cell" id="sum-player-a"></td>
-              <td class="form-cell" id="sum-player-b"></td>
-              <td class="form-cell" id="sum-player-c"></td>
-              <td class="form-cell" id="sum-player-d"></td>
+              <td id="sum-player-a"></td>
+              <td id="sum-player-b"></td>
+              <td id="sum-player-c"></td>
+              <td id="sum-player-d"></td>
             </tr>
-            <tr class="gray-row">
+            <tr class="headers">
               <th>Bonus</th>
-              <td class="form-cell" id="player-a-bonus"></td>
-              <td class="form-cell" id="player-b-bonus"></td>
-              <td class="form-cell" id="player-c-bonus"></td>
-              <td class="form-cell" id="player-d-bonus"></td>
+              <td id="player-a-bonus"></td>
+              <td id="player-b-bonus"></td>
+              <td id="player-c-bonus"></td>
+              <td id="player-d-bonus"></td>
             </tr>
-            <tr>
-              <td class="white-cell">Par/Pair</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+            <tr class="bodies">
+              <th>Par/Pair</th>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Två par/Two pairs</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+            <tr class="bodies">
+              <th>Två par/Two pairs</th>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Tretal/Three of a kind</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+            <tr class="bodies">
+              <th>retal/Three of a kind</th>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Fyrtal/Four of a kind</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+            <tr class="bodies">
+              <th>Fyrtal/Four of a kind</th>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Liten stege/Small straight</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+            <tr class="bodies">
+              <th>Liten stege/Small straight</th>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Stor stege/Large straight</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+            <tr class="bodies">
+              <th>Stor stege/Large straight</th>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Kåk/Full house</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+            <tr class="bodies">
+              <th>Kåk/Full house</th>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Chans/Chance</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+            <tr class="bodies">
+              <th>Chans/Chance</th>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
             </tr>
-            <tr>
-              <td class="white-cell">Yatzy</td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
-              <td class="form-cell darker-cell">
-                <input type="number" class="darker-cell" />
-              </td>
-              <td class="form-cell white-cell"><input type="number" /></td>
+            <tr class="bodies">
+              <th>Yatzy</th>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
+              <td><input type="number" /></td>
             </tr>
           </tbody>
-          <tfoot class="gray-row">
-            <th>Totalt/Total</th>
-            <td class="form-cell"></td>
-            <td class="form-cell"></td>
-            <td class="form-cell"></td>
-            <td class="form-cell"></td>
+          <tfoot>
+            <tr class="headers">
+              <th>Totalt/Total</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
           </tfoot>
         </table>
       </form>
       <div id="dices">
         <form>
           <h2 class="diceOutput">0</h2>
-          <label for="dice1">dice1</label>
-          <input type="checkbox" class="checkBox" name="checkBox1">
-  
+          <label for="checkBox1">dice1</label>
+          <input type="checkbox" class="checkBox" name="checkBox1" />
+
           <h2 class="diceOutput">0</h2>
-          <label for="dice2">dice2</label>
-          <input type="checkbox" class="checkBox" name="checkBox2">
-  
+          <label for="checkBox2">dice2</label>
+          <input type="checkbox" class="checkBox" name="checkBox2" />
+
           <h2 class="diceOutput">0</h2>
-          <label for="dice3">dice3</label>
-          <input type="checkbox" class="checkBox" name="checkBox3">
-  
+          <label for="checkBox3">dice3</label>
+          <input type="checkbox" class="checkBox" name="checkBox3" />
+
           <h2 class="diceOutput">0</h2>
-          <label for="dice4">dice4</label>
-          <input type="checkbox" class="checkBox" name="checkBox5">
-          
+          <label for="checkBox4">dice4</label>
+          <input type="checkbox" class="checkBox" name="checkBox4" />
+
           <h2 class="diceOutput">0</h2>
-          <label for="dice5">dice5</label>
-          <input type="checkbox" class="checkBox" name="checkbox5">
-  
+          <label for="checkbox5">dice5</label>
+          <input type="checkbox" class="checkBox" name="checkbox5" />
+
           <button id="throw-dice" type="button">Kasta tärningarna</button>
         </form>
-  
       </div>
       <div class="chat">
         <div class="text-mock">
           <span class="user">Gustaf:</span> Hejsan, mr.President! <br />
-          <span class="user">Obama:</span> Jag måste bara säga, Gustaf, att du är bäst!
+          <span class="user">Obama:</span> Jag måste bara säga, Gustaf, att du
+          är bäst!
           <br />
           <span class="user">Gustaf:</span> Tack kära du.
         </div>
