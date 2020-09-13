@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
   }
 
+
+
   //making an object for each player
   let playerAObject = new PlayerObject("a");
   let playerBObject = new PlayerObject("b");
@@ -36,12 +38,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   throwButton.addEventListener("click", function (e) {});
 
+  //Counter for how many throws the player has left
+  throwButton.addEventListener("click", counter(0));
+
   wholeForm.addEventListener("change", function (e) {
     playerAObject.playerSumAndBonus();
     playerBObject.playerSumAndBonus();
     playerCObject.playerSumAndBonus();
     playerDObject.playerSumAndBonus();
   });
+
 });
 
 //skapar variablar som refererar till "tärningarna" och deras inputs"
@@ -74,6 +80,8 @@ document.getElementById("throw-dice").addEventListener("click", function (e) {
   }
 });
 
+
+
 function isFullHouse(inputArray) {
   let diceOne = [];
   let diceTwo = [];
@@ -98,7 +106,22 @@ function isFullHouse(inputArray) {
 
   return false;
 }
-
 let myArray = [1];
 
 console.log(isFullHouse(myArray));
+
+
+
+
+//Counter of how many throws are left for the current player
+function counter(count) {
+  let button = document.getElementById("throw-dice");
+  button.onclick = function () {
+    count += 1;
+    button.innerHTML = (3 - count) + " kast kvar";
+    if (count === 3) {
+      button.innerHTML = "Nästa spelare: kasta tärningarna (3 kast kvar)"
+      count = 0;
+    }
+  }
+};
