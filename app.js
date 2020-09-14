@@ -61,20 +61,11 @@ document.getElementById("throw-dice").addEventListener("click", function (e) {
     let randomDice = Math.floor(Math.random() * (7 - 1) + 1);
     dicenum.innerHTML = randomDice;
   }
-  //Skapar funktionen IsBoxChecked som kollar ifall den aktuella checkboxen är ifylld
-  //returnerar true ifall det är fallet och false vid motsatsen
-  // Har gett dem alla samma classnamn då de sparas i en array och blir då mindre kod
-  function IsBoxChecked(Box) {
-    if (Box.checked) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+
   //Skapar loop som går igenom alla checkboxar och kollar ifall dem e ifyllda eller inte,
   //är de inte ifyllda körs funktionen rollDice
   for (let i = 0; i < 5; ++i) {
-    if (IsBoxChecked(checkBox[i]) == false) {
+    if (checkBox[i].checked == false) {
       rollDice(dice[i]);
     }
   }
