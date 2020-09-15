@@ -61,33 +61,22 @@ document.addEventListener("DOMContentLoaded", function (e) {
   });
 });
 
-function isFullHouse(inputArray) {
-  let diceOne = [];
-  let diceTwo = [];
-  diceOne.push(inputArray[0]);
-
-  for (let i = 1; i < inputArray.length; i++) {
-    if (inputArray[i] === diceOne[0]) {
-      diceOne.push(inputArray[i]);
-    } else if (diceTwo.length === 0) {
-      diceTwo.push(inputArray[i]);
-    } else if (inputArray[i] === diceTwo[0]) {
-      diceTwo.push(inputArray[i]);
-    }
+let isFullHous = (myArray) =>{
+  let countValues = [0,0,0,0,0,0,0]
+  for(currentNumber of myArray){
+      countValues[currentNumber]++; 
   }
 
-  if (
-    (diceTwo.length === 3 && diceOne.length === 2) ||
-    (diceTwo.length === 2 && diceOne.length === 3)
-  ) {
-    return true;
-  }
-
-  return false;
+  if(countValues.includes(2) && countValues.includes(3)){
+      console.log("fullt hus")
+  } 
+  else {
+       console.log(false)
+      }
 }
-let myArray = [1];
 
-console.log(isFullHouse(myArray));
+isFullHous([0,1,1,2,2])
+
 
 //Counter of how many throws are left for the current player
 function counter(count) {
