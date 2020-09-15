@@ -1,31 +1,31 @@
+class PlayerObject {
+  constructor(letter) {
+    this.letter = letter;
+  }
+  playerSumAndBonus() {
+    let outputSum = document.getElementById(`sum-player-${this.letter}`);
+    let playerBonus = document.getElementById(`player-${this.letter}-bonus`);
+    let playerArray = Array.from(
+      document.getElementsByClassName(`player-${this.letter}`)
+    );
+    let playerSecondArray = playerArray.map((element) => {
+      return Number(element.value);
+    });
+    let sum = playerSecondArray.reduce((acc, currValue) => {
+      return acc + currValue;
+    }, 0);
+    outputSum.innerHTML = sum;
+    if (sum >= 63) {
+      playerBonus.innerHTML = 50;
+    } else {
+      playerBonus.innerHTML = 0;
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function (e) {
   let wholeForm = document.getElementById("whole-form");
   let throwButton = document.getElementById("throw-dice");
-
-  class PlayerObject {
-    constructor(letter) {
-      this.letter = letter;
-    }
-    playerSumAndBonus() {
-      let outputSum = document.getElementById(`sum-player-${this.letter}`);
-      let playerBonus = document.getElementById(`player-${this.letter}-bonus`);
-      let playerArray = Array.from(
-        document.getElementsByClassName(`player-${this.letter}`)
-      );
-      let playerSecondArray = playerArray.map((element) => {
-        return Number(element.value);
-      });
-      let sum = playerSecondArray.reduce((acc, currValue) => {
-        return acc + currValue;
-      }, 0);
-      outputSum.innerHTML = sum;
-      if (sum >= 63) {
-        playerBonus.innerHTML = 50;
-      } else {
-        playerBonus.innerHTML = 0;
-      }
-    }
-  }
 
   playerA = new PlayerObject("a");
   playerB = new PlayerObject("b");
