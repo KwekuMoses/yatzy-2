@@ -43,9 +43,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     playerCObject.playerSumAndBonus();
     playerDObject.playerSumAndBonus();
   });
-});
 
-document.addEventListener("DOMContentLoaded", function (e) {
   //Skapar variabel som har checkbox som referens
   let checkBox = document.getElementsByClassName("checkBox");
   //Skapar eventlyssbare som kollar knapptryck för kast
