@@ -10,9 +10,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
       //counts the sum of this players points
       for (let i = 0; i < 6; i++) {
-        let currentCell = Number(
-          document.getElementById(this.letter + (i + 1)).value
-        ); //counts the sum of this players points
+        let currentCell = Number(document.getElementById(this.letter + (i + 1)).value); //counts the sum of this players points
         sum += currentCell;
       }
 
@@ -25,8 +23,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
       }
     }
   }
-
-
 
   //making an object for each player
   let playerAObject = new PlayerObject("a");
@@ -47,31 +43,25 @@ document.addEventListener("DOMContentLoaded", function (e) {
     playerCObject.playerSumAndBonus();
     playerDObject.playerSumAndBonus();
   });
-
 });
 
-document.addEventListener("DOMContentLoaded", function(e){
+document.addEventListener("DOMContentLoaded", function (e) {
   //Skapar variabel som har checkbox som referens
-   let checkBox = document.getElementsByClassName("checkBox");
+  let checkBox = document.getElementsByClassName("checkBox");
   //Skapar eventlyssbare som kollar knapptryck för kast
-   document.getElementById("throw-dice").addEventListener("click", function(e){
-  //Skapar funktion som tar in den returnerar ture eller false ifall den är icheckad eller inte
-     function IsBoxChecked(Box){
-       if(Box.checked) {return true;} 
-       else  {return false}
-     }
-  //Loopar igenom varje box och kollar true or false, vid false slumpas det fram en ny tärning. 
-     for(let i = 0; i < 5; ++i){
-      if(IsBoxChecked(checkBox[i]) == false){
-        let RandomDice = Math.floor(Math.random()*(7-1)+1);  
+  document.getElementById("throw-dice").addEventListener("click", function (e) {
+    //Loopar igenom varje box och kollar true or false, vid false slumpas det fram en ny tärning.
+    for (let i = 0; i < 5; ++i) {
+      if (!checkBox[i].checked) {
+        let RandomDice = Math.floor(Math.random() * (7 - 1) + 1);
         //hämtar bilder på tärningskast med hjälp
-        document.querySelectorAll(".diceArray")[i].setAttribute("src", "dices/dice"+RandomDice+".webp")
-          }
-     }
-   });
- });
-
-
+        document
+          .querySelectorAll(".diceArray")
+          [i].setAttribute("src", "dices/dice" + RandomDice + ".webp");
+      }
+    }
+  });
+});
 
 function isFullHouse(inputArray) {
   let diceOne = [];
@@ -101,18 +91,15 @@ let myArray = [1];
 
 console.log(isFullHouse(myArray));
 
-
-
-
 //Counter of how many throws are left for the current player
 function counter(count) {
   let button = document.getElementById("throw-dice");
   button.onclick = function () {
     count += 1;
-    button.innerHTML = (3 - count) + " kast kvar";
+    button.innerHTML = 3 - count + " kast kvar";
     if (count === 3) {
-      button.innerHTML = "Nästa spelare: kasta tärningarna (3 kast kvar)"
+      button.innerHTML = "Nästa spelare: kasta tärningarna (3 kast kvar)";
       count = 0;
     }
-  }
-};
+  };
+}
