@@ -1,36 +1,35 @@
 document.addEventListener("DOMContentLoaded", function (e) {
+  let wholeForm = document.getElementById("whole-form");
+  let throwButton = document.getElementById("throw-dice");
   class PlayerObject {
     constructor(letter) {
       this.letter = letter;
     }
-
     playerSumAndBonus() {
-      let sum = 0;
       let outputSum = document.getElementById(`sum-player-${this.letter}`);
-
-      //counts the sum of this players points
-      for (let i = 0; i < 6; i++) {
-        let currentCell = Number(document.getElementById(this.letter + (i + 1)).value); //counts the sum of this players points
-        sum += currentCell;
-      }
-
-      outputSum.innerHTML = sum; //outputs the sum of this players points
-
+      let playerBonus = document.getElementById(`player-${this.letter}-bonus`);
+      let playerArray = Array.from(
+        document.getElementsByClassName(`player-${this.letter}`)
+      );
+      let playerSecondArray = playerArray.map((element) => {
+        return Number(element.value);
+      });
+      let sum = playerSecondArray.reduce((acc, currValue) => {
+        return acc + currValue;
+      }, 0);
+      outputSum.innerHTML = sum;
       if (sum >= 63) {
-        document.getElementById(`player-${this.letter}-bonus`).innerHTML = 50; //checks if bonus is deserved
+        playerBonus.innerHTML = 50;
       } else {
-        document.getElementById(`player-${this.letter}-bonus`).innerHTML = 0;
+        playerBonus.innerHTML = 0;
       }
     }
   }
 
-  //making an object for each player
-  let playerAObject = new PlayerObject("a");
-  let playerBObject = new PlayerObject("b");
-  let playerCObject = new PlayerObject("c");
-  let playerDObject = new PlayerObject("d");
-  let wholeForm = document.getElementById("whole-form");
-  let throwButton = document.getElementById("throw-dice");
+  playerA = new PlayerObject("a");
+  playerB = new PlayerObject("b");
+  playerC = new PlayerObject("c");
+  playerD = new PlayerObject("d");
 
   throwButton.addEventListener("click", function (e) {});
 
@@ -38,10 +37,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
   throwButton.addEventListener("click", counter(0));
 
   wholeForm.addEventListener("change", function (e) {
-    playerAObject.playerSumAndBonus();
-    playerBObject.playerSumAndBonus();
-    playerCObject.playerSumAndBonus();
-    playerDObject.playerSumAndBonus();
+    playerA.playerSumAndBonus();
+    playerB.playerSumAndBonus();
+    playerC.playerSumAndBonus();
+    playerD.playerSumAndBonus();
   });
 
   //Skapar variabel som har checkbox som referens

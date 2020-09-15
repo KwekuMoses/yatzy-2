@@ -11,46 +11,33 @@ body {
   background-size: cover;
 }
 
-
-
-#dices-section{
+#dices-section {
   align-content: center;
   display: flex;
   flex-flow: column;
   width: 500px;
-
-
 }
 
-#dices-section form{
+#dices-section form {
   display: flex;
   justify-content: space-between;
   margin: 20px;
-
-
-  
 }
 
-#dices-section form div{
-  
+#dices-section form div {
   display: flex;
   flex-flow: column;
-
-
 }
 
-#dices-section form div img{
+#dices-section form div img {
   margin-bottom: 10px;
   height: 70px;
-
 }
 
 .throw-dice {
-  
   background-color: orange;
   border-radius: 30px;
   height: 70px;
-
 }
 
 header {
@@ -97,14 +84,14 @@ table {
   margin-left: 5px;
 }
 
-.headers>td {
+.headers > td {
   width: 80px;
   background-color: rgb(209, 205, 205);
   border: 2px solid black;
   border-radius: 2px;
 }
 
-.headers>th {
+.headers > th {
   padding-left: 5px;
   padding-right: 5px;
   font-size: 1em;
@@ -115,26 +102,26 @@ table {
   font-size: 1.1em;
 }
 
-.headers>td>input {
+.headers > td > input {
   width: 80px;
   border: transparent;
   background-color: rgb(209, 205, 205);
 }
 
-.bodies>td {
+.bodies > td {
   width: 80px;
   background-color: darkgrey;
   border: 2px solid black;
   border-radius: 2px;
 }
 
-.bodies>td>input {
+.bodies > td > input {
   width: 80px;
   border: transparent;
   background-color: rgba(172, 172, 172, 0);
 }
 
-.bodies>th {
+.bodies > th {
   padding-left: 5px;
   padding-right: 5px;
   font-weight: normal;
@@ -143,7 +130,7 @@ table {
   background-color: white;
 }
 
-.bodies>td:nth-child(odd) {
+.bodies > td:nth-child(odd) {
   width: 80px;
   background-color: white;
   border-radius: 2px;
@@ -184,4 +171,3 @@ table {
   background-color: #042d56;
   color: #fbf7e8;
 }
-
