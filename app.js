@@ -67,7 +67,7 @@ let isFullHous = (myArray) =>{
       countValues[currentNumber]++; 
   }
 
-  if(countValues.includes(2) && countValues.includes(3)){
+  if(countValues.includes(2 && 3){
       console.log("fullt hus")
   } 
   else {
