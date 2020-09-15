@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (e) {
   let wholeForm = document.getElementById("whole-form");
   let throwButton = document.getElementById("throw-dice");
+
   class PlayerObject {
     constructor(letter) {
       this.letter = letter;
@@ -30,8 +31,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
   playerB = new PlayerObject("b");
   playerC = new PlayerObject("c");
   playerD = new PlayerObject("d");
-
-  throwButton.addEventListener("click", function (e) {});
 
   //Counter for how many throws the player has left
   throwButton.addEventListener("click", counter(0));
