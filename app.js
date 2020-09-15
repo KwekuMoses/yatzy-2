@@ -61,22 +61,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
   });
 });
 
-let isFullHous = (myArray) =>{
-  let countValues = [0,0,0,0,0,0,0]
-  for(currentNumber of myArray){
-      countValues[currentNumber]++; 
+let isFullHous = (myArray) => {
+  let countValues = [0, 0, 0, 0, 0, 0, 0];
+  for (currentNumber of myArray) {
+    countValues[currentNumber]++;
   }
 
-  if(countValues.includes(2 && 3){
-      console.log("fullt hus")
-  } 
-  else {
-       console.log(false)
-      }
-}
+  if (countValues.includes(2 && 3)) {
+    console.log("fullt hus");
+  } else {
+    console.log(false);
+  }
+};
 
-isFullHous([0,1,1,2,2])
-
+isFullHous([0, 1, 1, 2, 2]);
 
 //Counter of how many throws are left for the current player
 function counter(count) {
