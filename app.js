@@ -1,46 +1,68 @@
+class PlayerObject {
+  constructor(letter) {
+    this.letter = letter;
+  }
+  playerSumBonusAndTotal() {
+    let outputSum = document.getElementById(`sum-player-${this.letter}`);
+    let playerBonus = document.getElementById(`player-${this.letter}-bonus`);
+    let playerArray = Array.from(
+      document.getElementsByClassName(`player-${this.letter}`)
+    );
+    let playerSecondArray = playerArray.map((element) => {
+      return Number(element.value);
+    });
+    let sum = playerSecondArray.reduce((acc, currValue) => {
+      return acc + currValue;
+    }, 0);
+
+    if (sum <= 0) {
+      outputSum.innerHTML = "";
+    } else {
+      outputSum.innerHTML = sum;
+    }
+    if (sum >= 63) {
+      playerBonus.innerHTML = 50;
+    } else {
+      playerBonus.innerHTML = "";
+    }
+
+    let playerArrayPostBonus = Array.from(
+      document.getElementsByClassName(`player-${this.letter}-post-bonus`)
+    );
+    let playerSecondArrayPostBonus = playerArrayPostBonus.map((element) => {
+      return Number(element.value);
+    });
+    let total = playerSecondArrayPostBonus.reduce((acc, currValue) => {
+      return acc + currValue;
+    }, 0);
+    total += Number(outputSum.textContent) + Number(playerBonus.textContent);
+    let playerTotal = document.getElementById(`total-player-${this.letter}`);
+
+    if (total <= 0) {
+      playerTotal.textContent = "";
+    } else {
+      playerTotal.textContent = total;
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function (e) {
   let wholeForm = document.getElementById("whole-form");
   let throwButton = document.getElementById("throw-dice");
-  class PlayerObject {
-    constructor(letter) {
-      this.letter = letter;
-    }
-    playerSumAndBonus() {
-      let outputSum = document.getElementById(`sum-player-${this.letter}`);
-      let playerBonus = document.getElementById(`player-${this.letter}-bonus`);
-      let playerArray = Array.from(
-        document.getElementsByClassName(`player-${this.letter}`)
-      );
-      let playerSecondArray = playerArray.map((element) => {
-        return Number(element.value);
-      });
-      let sum = playerSecondArray.reduce((acc, currValue) => {
-        return acc + currValue;
-      }, 0);
-      outputSum.innerHTML = sum;
-      if (sum >= 63) {
-        playerBonus.innerHTML = 50;
-      } else {
-        playerBonus.innerHTML = 0;
-      }
-    }
-  }
 
   playerA = new PlayerObject("a");
   playerB = new PlayerObject("b");
   playerC = new PlayerObject("c");
   playerD = new PlayerObject("d");
 
-  throwButton.addEventListener("click", function (e) {});
-
   //Counter for how many throws the player has left
   throwButton.addEventListener("click", counter(0));
 
   wholeForm.addEventListener("change", function (e) {
-    playerA.playerSumAndBonus();
-    playerB.playerSumAndBonus();
-    playerC.playerSumAndBonus();
-    playerD.playerSumAndBonus();
+    playerA.playerSumBonusAndTotal();
+    playerB.playerSumBonusAndTotal();
+    playerC.playerSumBonusAndTotal();
+    playerD.playerSumBonusAndTotal();
   });
 
   //Skapar variabel som har checkbox som referens
