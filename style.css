@@ -6,6 +6,7 @@
 }
 
 body {
+  height: 100vh;
   background-image: url(images/HandDice.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -145,6 +146,8 @@ table {
 .text-mock {
   color: #656975;
   margin: 5px;
+  height: 200px;
+  overflow: scroll;
 }
 
 .user {

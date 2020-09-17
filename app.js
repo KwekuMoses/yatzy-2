@@ -86,3 +86,23 @@ function counter(count) {
     }
   };
 }
+
+
+let chatbox = document.querySelector(".text-mock")
+
+
+document.querySelector("#chat-btn").addEventListener("click", function(e){
+  let nameInputSpan = document.createElement("span")
+  let chatSpan = document.createElement("span")
+
+  let chatInput = document.getElementById("chat_input");
+  let chatInputName = document.getElementById("chat_name_input")
+
+  nameInputSpan.innerHTML ="<br>" + chatInputName.value + ": "
+  chatSpan.innerHTML = chatInput.value 
+  nameInputSpan.setAttribute("class", "user")
+
+  chatbox.appendChild(nameInputSpan)
+  chatbox.appendChild(chatSpan)
+
+})
