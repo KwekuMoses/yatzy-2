@@ -147,7 +147,7 @@ table {
   color: #656975;
   margin: 5px;
   height: 200px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .user {
