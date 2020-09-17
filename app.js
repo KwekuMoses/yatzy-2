@@ -2,27 +2,11 @@ class PlayerObject {
   constructor(letter) {
     this.letter = letter;
   }
-<<<<<<< HEAD
-=======
   //a method that counts sum, bonus and total
->>>>>>> experiment
   playerSumBonusAndTotal() {
     let outputSum = document.getElementById(`sum-player-${this.letter}`);
     let playerBonus = document.getElementById(`player-${this.letter}-bonus`);
     let playerArray = Array.from(
-<<<<<<< HEAD
-      document.getElementsByClassName(`player-${this.letter}`)
-    );
-    let playerSecondArray = playerArray.map((element) => {
-      return Number(element.value);
-    });
-    let sum = playerSecondArray.reduce((acc, currValue) => {
-      return acc + currValue;
-    }, 0);
-
-    if (sum <= 0) {
-      outputSum.innerHTML = "";
-=======
       document.getElementsByClassName(`player-${this.letter}`) //converts htmlcollection to array
     );
     let playerSecondArray = playerArray.map((element) => {
@@ -34,25 +18,17 @@ class PlayerObject {
 
     if (sum <= 0) {
       outputSum.innerHTML = ""; //so it does not display zeros in sum
->>>>>>> experiment
     } else {
       outputSum.innerHTML = sum;
     }
     if (sum >= 63) {
-<<<<<<< HEAD
-      playerBonus.innerHTML = 50;
-=======
       playerBonus.innerHTML = 50; //so it does not display zeros in bonus
->>>>>>> experiment
     } else {
       playerBonus.innerHTML = "";
     }
 
-<<<<<<< HEAD
-=======
     //the rest of the code in the method is basically a copy from the code above
     //but it calculates the total of the player
->>>>>>> experiment
     let playerArrayPostBonus = Array.from(
       document.getElementsByClassName(`player-${this.letter}-post-bonus`)
     );
@@ -72,13 +48,6 @@ class PlayerObject {
     }
   }
 }
-<<<<<<< HEAD
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  let wholeForm = document.getElementById("whole-form");
-  let throwButton = document.getElementById("throw-dice");
-=======
->>>>>>> experiment
 
 document.addEventListener("DOMContentLoaded", function (e) {
   let wholeForm = document.getElementById("whole-form");
@@ -94,10 +63,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   throwButton.addEventListener("click", counter(0));
 
   wholeForm.addEventListener("change", function (e) {
-<<<<<<< HEAD
-=======
     //everytime something changes in the form the methods below are called
->>>>>>> experiment
     playerA.playerSumBonusAndTotal();
     playerB.playerSumBonusAndTotal();
     playerC.playerSumBonusAndTotal();
