@@ -2,11 +2,7 @@ class PlayerObject {
   constructor(letter) {
     this.letter = letter;
   }
-<<<<<<< HEAD
-  playerSumAndBonus() {
-=======
   playerSumBonusAndTotal() {
->>>>>>> experiment
     let outputSum = document.getElementById(`sum-player-${this.letter}`);
     let playerBonus = document.getElementById(`player-${this.letter}-bonus`);
     let playerArray = Array.from(
@@ -18,13 +14,6 @@ class PlayerObject {
     let sum = playerSecondArray.reduce((acc, currValue) => {
       return acc + currValue;
     }, 0);
-<<<<<<< HEAD
-    outputSum.innerHTML = sum;
-    if (sum >= 63) {
-      playerBonus.innerHTML = 50;
-    } else {
-      playerBonus.innerHTML = 0;
-=======
 
     if (sum <= 0) {
       outputSum.innerHTML = "";
@@ -53,7 +42,6 @@ class PlayerObject {
       playerTotal.textContent = "";
     } else {
       playerTotal.textContent = total;
->>>>>>> experiment
     }
   }
 }
