@@ -2,30 +2,33 @@ class PlayerObject {
   constructor(letter) {
     this.letter = letter;
   }
+  //a method that counts sum, bonus and total
   playerSumBonusAndTotal() {
     let outputSum = document.getElementById(`sum-player-${this.letter}`);
     let playerBonus = document.getElementById(`player-${this.letter}-bonus`);
     let playerArray = Array.from(
-      document.getElementsByClassName(`player-${this.letter}`)
+      document.getElementsByClassName(`player-${this.letter}`) //converts htmlcollection to array
     );
     let playerSecondArray = playerArray.map((element) => {
-      return Number(element.value);
+      return Number(element.value); //creates an array with the values as numbers from the cells
     });
     let sum = playerSecondArray.reduce((acc, currValue) => {
-      return acc + currValue;
+      return acc + currValue; //calculates the sum of the cells
     }, 0);
 
     if (sum <= 0) {
-      outputSum.innerHTML = "";
+      outputSum.innerHTML = ""; //so it does not display zeros in sum
     } else {
       outputSum.innerHTML = sum;
     }
     if (sum >= 63) {
-      playerBonus.innerHTML = 50;
+      playerBonus.innerHTML = 50; //so it does not display zeros in bonus
     } else {
       playerBonus.innerHTML = "";
     }
 
+    //the rest of the code in the method is basically a copy from the code above
+    //but it calculates the total of the player
     let playerArrayPostBonus = Array.from(
       document.getElementsByClassName(`player-${this.letter}-post-bonus`)
     );
@@ -50,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   let wholeForm = document.getElementById("whole-form");
   let throwButton = document.getElementById("throw-dice");
 
+  //creates an object for each player
   playerA = new PlayerObject("a");
   playerB = new PlayerObject("b");
   playerC = new PlayerObject("c");
@@ -59,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   throwButton.addEventListener("click", counter(0));
 
   wholeForm.addEventListener("change", function (e) {
+    //everytime something changes in the form the methods below are called
     playerA.playerSumBonusAndTotal();
     playerB.playerSumBonusAndTotal();
     playerC.playerSumBonusAndTotal();
@@ -87,7 +92,9 @@ let isFullHous = (myArray) => {
   for (currentNumber of myArray) {
     countValues[currentNumber]++;
   }
-
+  if (count.values.includes(5)) {
+    console.log("yatzy");
+  }
   if (countValues.includes(2 && 3)) {
     console.log("fullt hus");
   } else {
