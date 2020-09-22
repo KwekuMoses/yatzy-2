@@ -1,13 +1,13 @@
 class PlayerObject {
-  constructor(letter) {
-    this.letter = letter;
+  constructor(number) {
+    this.number = number;
   }
   //a method that counts sum, bonus and total
   playerSumBonusAndTotal() {
-    let outputSum = document.getElementById(`sum-player-${this.letter}`);
-    let playerBonus = document.getElementById(`player-${this.letter}-bonus`);
+    let outputSum = document.getElementById(`sum-player-${this.number}`);
+    let playerBonus = document.getElementById(`player-${this.number}-bonus`);
     let playerArray = Array.from(
-      document.getElementsByClassName(`player-${this.letter}`) //converts htmlcollection to array
+      document.getElementsByClassName(`player-${this.number}`) //converts htmlcollection to array
     );
     let playerSecondArray = playerArray.map((element) => {
       return Number(element.value); //creates an array with the values as numbers from the cells
@@ -30,7 +30,7 @@ class PlayerObject {
     //the rest of the code in the method is basically a copy from the code above
     //but it calculates the total of the player
     let playerArrayPostBonus = Array.from(
-      document.getElementsByClassName(`player-${this.letter}-post-bonus`)
+      document.getElementsByClassName(`player-${this.number}-post-bonus`)
     );
     let playerSecondArrayPostBonus = playerArrayPostBonus.map((element) => {
       return Number(element.value);
@@ -39,7 +39,7 @@ class PlayerObject {
       return acc + currValue;
     }, 0);
     total += Number(outputSum.textContent) + Number(playerBonus.textContent);
-    let playerTotal = document.getElementById(`total-player-${this.letter}`);
+    let playerTotal = document.getElementById(`total-player-${this.number}`);
 
     if (total <= 0) {
       playerTotal.textContent = "";
@@ -50,25 +50,23 @@ class PlayerObject {
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
+  let start = document.getElementById("start-button");
   let wholeForm = document.getElementById("whole-form");
-  let throwButton = document.getElementById("throw-dice");
+  disableCells();
 
-  //creates an object for each player
-  playerA = new PlayerObject("a");
-  playerB = new PlayerObject("b");
-  playerC = new PlayerObject("c");
-  playerD = new PlayerObject("d");
+  start.addEventListener("click", function (e) {
+    createPlayers(amountOfPlayers()); //creating an object for each player
+
+    wholeForm.addEventListener("change", function (e) {
+      outPutCalcSum(amountOfPlayers().length);
+    });
+  });
 
   //Counter for how many throws the player has left
-  throwButton.addEventListener("click", counter(0));
 
-  wholeForm.addEventListener("change", function (e) {
-    //everytime something changes in the form the methods below are called
-    playerA.playerSumBonusAndTotal();
-    playerB.playerSumBonusAndTotal();
-    playerC.playerSumBonusAndTotal();
-    playerD.playerSumBonusAndTotal();
-  });
+  let throwButton = document.getElementById("throw-dice");
+
+  throwButton.addEventListener("click", counter(0));
 
   //Skapar variabel som har checkbox som referens
   let checkBox = document.getElementsByClassName("checkBox");
@@ -84,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
           [i].setAttribute("src", "dices/dice" + RandomDice + ".webp");
       }
     }
+    amountOfPlayers();
   });
 });
 
@@ -92,7 +91,7 @@ let isFullHous = (myArray) => {
   for (currentNumber of myArray) {
     countValues[currentNumber]++;
   }
-  if (count.values.includes(5)) {
+  if (countValues.includes(5)) {
     console.log("yatzy");
   }
   if (countValues.includes(2 && 3)) {
@@ -102,7 +101,7 @@ let isFullHous = (myArray) => {
   }
 };
 
-isFullHous([0, 1, 1, 2, 2]);
+//isFullHous([0, 1, 1, 2, 2]);
 
 //Counter of how many throws are left for the current player
 function counter(count) {
@@ -115,4 +114,99 @@ function counter(count) {
       count = 0;
     }
   };
+}
+// A function to controll the amount of players and where in the form they're located
+function amountOfPlayers() {
+  let players = document.getElementsByClassName("playerName");
+  let playersArray = Array.from(players);
+  let playersArrayStrings = playersArray.map((element) => {
+    return String(element.value);
+  });
+  let outputArray = [];
+  for (let i = 0; i < playersArrayStrings.length; i++) {
+    if (playersArrayStrings[i] != "") {
+      outputArray.push(i);
+    }
+  }
+  return outputArray;
+}
+// a function that creates the needed amount of player objects
+function createPlayers(inputArray) {
+  let amount = inputArray.length;
+
+  switch (amount) {
+    case 1:
+      playerOne = new PlayerObject(inputArray[0]);
+      enableCells(inputArray);
+      break;
+    case 2:
+      playerOne = new PlayerObject(inputArray[0]);
+      playerTwo = new PlayerObject(inputArray[1]);
+      enableCells(inputArray);
+      break;
+    case 3:
+      playerOne = new PlayerObject(inputArray[0]);
+      playerTwo = new PlayerObject(inputArray[1]);
+      playerThree = new PlayerObject(inputArray[2]);
+      enableCells(inputArray);
+      break;
+    case 4:
+      playerOne = new PlayerObject(inputArray[0]);
+      playerTwo = new PlayerObject(inputArray[1]);
+      playerThree = new PlayerObject(inputArray[2]);
+      playerFour = new PlayerObject(inputArray[3]);
+      enableCells(inputArray);
+      break;
+  }
+}
+
+function disableCells() {
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 6; j++) {
+      let temp = document.getElementsByClassName(`player-${i}`);
+      temp[j].disabled = true;
+    }
+    for (let k = 0; k < 9; k++) {
+      let temp = document.getElementsByClassName(`player-${i}-post-bonus`);
+      temp[k].disabled = true;
+    }
+  }
+}
+
+function enableCells(inputArray) {
+  for (let i = 0; i < inputArray.length; i++) {
+    for (let j = 0; j < 6; j++) {
+      let temp = document.getElementsByClassName(`player-${inputArray[i]}`);
+      temp[j].disabled = false;
+    }
+    for (let k = 0; k < 9; k++) {
+      let temp = document.getElementsByClassName(`player-${inputArray[i]}-post-bonus`);
+      temp[k].disabled = false;
+    }
+  }
+}
+
+function outPutCalcSum(players) {
+  switch (players) {
+    case 1:
+      playerOne.playerSumBonusAndTotal();
+      break;
+    case 2:
+      playerOne.playerSumBonusAndTotal();
+      playerTwo.playerSumBonusAndTotal();
+      break;
+    case 3:
+      playerOne.playerSumBonusAndTotal();
+      playerTwo.playerSumBonusAndTotal();
+      playerThree.playerSumBonusAndTotal();
+      break;
+    case 4:
+      playerOne.playerSumBonusAndTotal();
+      playerTwo.playerSumBonusAndTotal();
+      playerThree.playerSumBonusAndTotal();
+      playerFour.playerSumBonusAndTotal();
+      break;
+    default:
+      break;
+  }
 }
