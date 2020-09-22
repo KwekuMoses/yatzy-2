@@ -106,7 +106,7 @@ table {
 .headers > td > input {
   width: 80px;
   border: transparent;
-  background-color: rgb(209, 205, 205);
+  background-color: inherit;
 }
 
 .bodies > td {
