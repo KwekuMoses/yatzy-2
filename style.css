@@ -6,6 +6,7 @@
 }
 
 body {
+  height: 100vh;
   background-image: url(images/HandDice.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -105,7 +106,7 @@ table {
 .headers > td > input {
   width: 80px;
   border: transparent;
-  background-color: rgb(209, 205, 205);
+  background-color: inherit;
 }
 
 .bodies > td {
@@ -145,6 +146,8 @@ table {
 .text-mock {
   color: #656975;
   margin: 5px;
+  height: 200px;
+  overflow: auto;
 }
 
 .user {
