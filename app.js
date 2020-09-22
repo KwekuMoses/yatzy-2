@@ -51,6 +51,7 @@ class PlayerObject {
 
 document.addEventListener("DOMContentLoaded", function (e) {
   let start = document.getElementById("start-button");
+
   let wholeForm = document.getElementById("whole-form");
   disableCells();
 
@@ -63,10 +64,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
   });
 
 
-  //Counter for how many throws the player has left
-
+  
   let throwButton = document.getElementById("throw-dice");
-
+  
+  //Counter for how many throws the player has left
   throwButton.addEventListener("click", counter(0));
   
   let randomDice; 
@@ -79,22 +80,23 @@ document.addEventListener("DOMContentLoaded", function (e) {
     //hämtar bilder på tärningskast med hjälp av randomDice
     document.querySelectorAll(".diceArray")[i].setAttribute("src", "dices/dice" + randomDice + ".webp");
     return randomDice
-  }         
-
+  }     
 
   //Skapar eventlyssnare som kollar knapptryck för kast
   document.getElementById("throw-dice").addEventListener("click", function (e) {
+
     //Skapar variabel som har checkbox som referens
     let checkBox = document.getElementsByClassName("checkBox");
     //Loopar igenom varje box och kollar true or false, vid false kastas en ny tärning och sätts in i diceArray.
     for (let i = 0; i < 5; ++i) {
       if (!checkBox[i].checked) {
-        throwDices(i);
+        throwDices(i); 
+        diceArray[i] = randomDice
       }
-      diceArray[i] = randomDice
+
     }
     amountOfPlayers();
-      
+          
         
     isFullHous(diceArray);
   });
