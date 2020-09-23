@@ -1,24 +1,32 @@
 class Dice {
   constructor() {
-
     this.dice = [];
-    this.dice_values = [0,0,0,0,0,0,0];
+    this.dice_values = [0, 0, 0, 0, 0, 0, 0];
 
-    for (let i = 0; i < 5; i++) {
+    /*for (let i = 0; i < 5; i++) {
       this.dice.push(new Die(i));
-    }
-      console.log(dice.value);
-    this.calculateDiceValues(); 
-  }
-  calculateDiceValues() {
+    }*/
+    console.log(this.dice);
 
+    this.calculateDiceValues();
+  }
+
+  userThrow() {
+    let checkboxes = Array.from(document.getElementsByClassName("checkBox"));
+    for (let i = 0; i < 5; i++) {
+      if (!checkboxes[i].checked) {
+        this.dice.push(new Die(i));
+      }
+    }
+  }
+
+  calculateDiceValues() {
     this.dice.map((currentValue) => {
       this.dice_values[currentValue.value]++;
     });
   }
 
   diceValues() {
-
     let countValues = this.dice_values;
     let twoPairs = [];
 
@@ -80,15 +88,8 @@ class Dice {
 class Die {
   constructor(name) {
     this.name = name;
-    this.value = this.new_value();
-    this.checkbox = false;
+    this.value = this.throw_die();
     this.diceImg(this.value);
-  }
-
-  new_value() {
-    let randomDice = Math.floor(Math.random() * (7 - 1) + 1);
-    console.log(randomDice);
-    return randomDice;
   }
 
   diceImg(args) {
@@ -96,11 +97,7 @@ class Die {
     temp[this.name].setAttribute("src", "dices/dice" + args + ".webp");
   }
   throw_die() {
-    //Skapar variabel som har checkbox som referens
-    let checkBox = document.getElementsByClassName("checkBox");
-    //Loopar igenom varje box och kollar true or false, vid false kastas en ny tärning och sätts in i diceArray.
-    if (!this.checkBox.checked) {
-      new_value();
-    }
+    let randomDice = Math.floor(Math.random() * (7 - 1) + 1);
+    return randomDice;
   }
 }
