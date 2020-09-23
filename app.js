@@ -195,8 +195,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
  throwButton.addEventListener("click", function (e) {
     counter(0);
 
-    let dice = new Dice();
-    
+    let checkboxes = Array.from(document.getElementsByClassName("checkbox"));
+
+    for(let i = 0; i < 5; i++) {
+      if(!checkboxes[i].checked){
+        
+      }
+    }
 
   });
 
@@ -218,7 +223,3 @@ document.addEventListener("DOMContentLoaded", function (e) {
     chatbox.appendChild(chatSpan);
   });
 });
-
-
-
-

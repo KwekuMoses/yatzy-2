@@ -7,7 +7,7 @@ class Dice {
     for (let i = 0; i < 5; i++) {
       this.dice.push(new Die(i));
     }
-
+      console.log(dice.value);
     this.calculateDiceValues(); 
   }
   calculateDiceValues() {
