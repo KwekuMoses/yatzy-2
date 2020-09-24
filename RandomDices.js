@@ -2,8 +2,8 @@ class Dice {
   constructor() {
     this.dice = [];
     this.dice_values = [0, 0, 0, 0, 0, 0, 0]; //*För att kolla händerna/
-
     this.calculateDiceValues();
+    this.diceValues();
   }
 
   userThrow() {
@@ -24,7 +24,6 @@ class Dice {
   diceValues() {
     let countValues = this.dice_values;
     let twoPairs = [];
-
     if (countValues.includes(5)) {
       //checks for yatzy
       console.log("Yatzy!");
@@ -70,6 +69,7 @@ class Dice {
     } else if (countValues.includes(2)) {
       // checks for pair and two pair
       console.log("Par!");
+
       let sum = countValues.indexOf(2) * 2;
       console.log(sum);
       twoPairs = countValues.filter((element) => element == 2);
