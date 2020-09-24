@@ -1,23 +1,29 @@
 class Dice {
   constructor() {
-    this.dice = [];
-    this.dice_values = [0, 0, 0, 0, 0, 0, 0]; //*För att kolla händerna/
-    this.calculateDiceValues();
-    this.diceValues();
+    this.dice = [0, 0, 0, 0, 0];
+    this.dice_values = [0, 0, 0, 0, 0, 0, 0];
+    this.checkboxes = Array.from(document.getElementsByClassName("checkBox"));
   }
 
   userThrow() {
-    let checkboxes = Array.from(document.getElementsByClassName("checkBox"));
     for (let i = 0; i < 5; i++) {
-      if (!checkboxes[i].checked) {
-        this.dice.push(new Die(i));
+      if (!this.checkboxes[i].checked) {
+        this.dice[i] = new Die(i);
       }
+    }
+  }
+  uncheck() {
+    for (let checkbox of this.checkboxes) {
+      checkbox.checked = false;
     }
   }
 
   calculateDiceValues() {
+    this.dice_values = [0, 0, 0, 0, 0, 0, 0]; //*För att kolla händerna/
+    console.log(this.dice);
     this.dice.map((currentValue) => {
       this.dice_values[currentValue.value]++;
+      console.log(this.dice_values);
     });
   }
 
@@ -29,7 +35,8 @@ class Dice {
       console.log("Yatzy!");
       let sum = 50;
       console.log(sum);
-    } else if (
+    }
+    if (
       //checks for large straight
       countValues[2] >= 1 &&
       countValues[3] >= 1 &&
@@ -40,7 +47,8 @@ class Dice {
       console.log("Stor Stege!");
       let sum = 20;
       console.log(sum);
-    } else if (
+    }
+    if (
       // checks for small straight
       countValues[1] >= 1 &&
       countValues[2] >= 1 &&
@@ -51,22 +59,26 @@ class Dice {
       console.log("Liten Stege!");
       let sum = 15;
       console.log(sum);
-    } else if (countValues.includes(2) && countValues.includes(3)) {
+    }
+    if (countValues.includes(2) && countValues.includes(3)) {
       //checks for full house
       console.log("KåK!");
       let sum = countValues.indexOf(3) * 3 + countValues.indexOf(2) * 2;
       console.log(sum);
-    } else if (countValues.includes(4)) {
+    }
+    if (countValues.includes(4)) {
       //checks for four of a kind
       console.log("Fyrtal!");
       let sum = countValues.indexOf(4) * 4;
       console.log(sum);
-    } else if (countValues.includes(3)) {
+    }
+    if (countValues.includes(3)) {
       // checks for three of a kind
       console.log("Triss!");
       let sum = countValues.indexOf(3) * 3;
       console.log(sum);
-    } else if (countValues.includes(2)) {
+    }
+    if (countValues.includes(2)) {
       // checks for pair and two pair
       console.log("Par!");
 

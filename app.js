@@ -2,43 +2,56 @@ class Player {
   constructor(number) {
     this.number = number;
   }
-  //a method that counts sum, bonus and total
+  //a method to keep track of sum, bonus and total
   playerSumBonusAndTotal() {
+    //variables to access selected player row
     let outputSum = document.getElementById(`sum-player-${this.number}`);
     let playerTotal = document.getElementById(`total-player-${this.number}`);
     let playerBonus = document.getElementById(`player-${this.number}-bonus`);
+
+    //converts HTMLcollection to array
     let playerArray = Array.from(
-      document.getElementsByClassName(`player-${this.number}`) //converts htmlcollection to array
+      document.getElementsByClassName(`player-${this.number}`)
     );
+
+    //.map gives us an array with the values as numbers
     let playerSecondArray = playerArray.map((element) => {
-      return Number(element.value); //creates an array with the values as numbers from the cells
+      return Number(element.value);
     });
+
+    //.reduce gives us the total of all given numbers
     let total = playerSecondArray.reduce((acc, currValue) => {
-      return acc + currValue; //calculates the sum of the cells
+      return acc + currValue;
     }, 0);
 
     let sum = 0;
 
+    //for loop to separate the 1's through 6's from the rest of the row
     for (let i = 0; i < 6; i++) {
       sum += playerSecondArray[i];
     }
 
+    //if sum is larger than or equal to 63 selected player is given a 50 point bonus
     let bonus = sum >= 63 ? 50 : "";
 
+    //outputs all results
     outputSum.innerHTML = sum <= 0 ? "" : sum;
     playerBonus.innerHTML = bonus;
     playerTotal.textContent = total <= 0 ? "" : total + bonus;
   }
 }
 
-//Counter of how many throws are left for the current player
+//function to count how many throws are left for current player
 function counter(count, playerCounter, inputArray) {
   let button = document.getElementById("throw-dice");
   let playerName = document.querySelectorAll(".playerName");
   let currentPlayerNumber = inputArray[playerCounter].number;
 
+  //green color is set to player
   playerName[currentPlayerNumber].parentElement.style.backgroundColor =
     "#76A08A";
+
+  //when count hits zero color is set to default and next player is selected
   if (count === 0) {
     button.innerHTML = "Nästa spelare: kasta tärningarna (3 kast kvar)";
     playerName[currentPlayerNumber].parentElement.style.backgroundColor =
@@ -47,14 +60,19 @@ function counter(count, playerCounter, inputArray) {
     button.innerHTML = count + " kast kvar";
   }
 }
-// a function to controll the amount of players and where in the form they're located
+
+//function to control amount of players
 function amountOfPlayers() {
   let players = Array.from(document.getElementsByClassName("playerName"));
   //let playersArray = Array.from(players);
+
+  //returns a string from
   let playersArrayStrings = players.map((element) => {
     return String(element.value);
   });
+
   let outputArray = [];
+
   for (let i = 0; i < playersArrayStrings.length; i++) {
     if (playersArrayStrings[i] != "") {
       outputArray.push(i);
@@ -62,6 +80,7 @@ function amountOfPlayers() {
   }
   return outputArray;
 }
+
 // a function that creates the needed amount of player objects
 function createPlayers(inputArray) {
   //let amount = inputArray.length;
@@ -130,11 +149,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     activePlayers = createPlayers(amountOfPlayers()); //creating an object for each player
     throwButton.addEventListener("click", function (e) {
-      dices.diceValues();
-      dices.calculateDiceValues();
       counter(count, playerCounter, activePlayers);
       dices.userThrow();
+      dices.calculateDiceValues();
+      dices.diceValues();
       if (count === 0) {
+        dices.uncheck();
         count = 3;
         playerCounter++;
         if (playerCounter === activePlayers.length) {
