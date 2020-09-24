@@ -100,6 +100,7 @@ function outPutCalcSum(players) {
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
+  let reloadStart = document.getElementById("reload-start");
   let start = document.getElementById("start-button");
   let dices = new Dice();
   let wholeForm = document.getElementById("whole-form");
@@ -111,6 +112,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
   disableCells();
 
   start.addEventListener("click", function (e) {
+    start.remove();
+    let reload = document.createElement("input");
+    reload.setAttribute("type", "button");
+    reload.setAttribute("value", "Börja om");
+    reloadStart.appendChild(reload);
+    reload.addEventListener("click", function (e) {
+      location.reload();
+    });
+    console.log(start);
     activePlayers = createPlayers(amountOfPlayers()); //creating an object for each player
     throwButton.addEventListener("click", function (e) {
       counter(count, playerCounter, activePlayers);
