@@ -180,3 +180,6 @@ table {
   background-color: #042d56;
   color: #fbf7e8;
 }
+.black-cells {
+  background-color: rgb(209, 205, 205) !important;
+}

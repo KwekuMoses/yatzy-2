@@ -44,23 +44,8 @@ function counter(count, playerCounter, inputArray) {
   } else {
     button.innerHTML = count + " kast kvar";
   }
-
-  /*button.addEventListener("click", function (e) {
-    playerName[i].style.backgroundColor = "orange";
-    count += 1;
-    button.innerHTML = 3 - count + " kast kvar";
-    if (count === 3) {
-      button.innerHTML = "Nästa spelare: kasta tärningarna (3 kast kvar)";
-      count = 0;
-      i++;
-      playerName[i - 1].style.backgroundColor = "rgb(209, 205, 205)";
-      if (i > 3) {
-        i = 0;
-      }
-    }
-  });*/
 }
-// A function to controll the amount of players and where in the form they're located
+// a function to controll the amount of players and where in the form they're located
 function amountOfPlayers() {
   let players = Array.from(document.getElementsByClassName("playerName"));
   //let playersArray = Array.from(players);
@@ -86,25 +71,28 @@ function createPlayers(inputArray) {
   console.log(createdPlayersArray);
   return createdPlayersArray;
 }
-
+// a function that disables all cells
 function disableCells() {
   for (let i = 0; i < 4; i++) {
     for (let j = 0; j < 15; j++) {
-      let temp = document.getElementsByClassName(`player-${i}`);
-      temp[j].disabled = true;
+      let playerCells = document.getElementsByClassName(`player-${i}`);
+
+      playerCells[j].disabled = true;
+      playerCells[j].parentElement.classList.add("black-cells");
     }
   }
 }
-
+// a function that enables all cells
 function enableCells(inputArray) {
   for (let i = 0; i < inputArray.length; i++) {
     for (let j = 0; j < 15; j++) {
-      let temp = document.getElementsByClassName(`player-${inputArray[i]}`);
-      temp[j].disabled = false;
+      let playerCells = document.getElementsByClassName(`player-${inputArray[i]}`);
+      playerCells[j].disabled = false;
+      playerCells[j].parentElement.classList.remove("black-cells");
     }
   }
 }
-
+// a function to call the method playerSumBonusAndTotal for all players
 function outPutCalcSum(players) {
   for (let i = 0; i < players.length; i++) {
     players[i].playerSumBonusAndTotal();
