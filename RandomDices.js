@@ -3,11 +3,6 @@ class Dice {
     this.dice = [];
     this.dice_values = [0, 0, 0, 0, 0, 0, 0];
 
-    /*for (let i = 0; i < 5; i++) {
-      this.dice.push(new Die(i));
-    }*/
-    console.log(this.dice);
-
     this.calculateDiceValues();
   }
 
