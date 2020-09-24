@@ -3,7 +3,10 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+
 }
+
+
 
 body {
   background-image: url(images/HandDice.jpg);
@@ -89,57 +92,63 @@ table {
   border-collapse: collapse;
   margin-bottom: 20px;
   margin-left: 5px;
+
 }
 
-.headers > td {
+.headers>td {
   width: 80px;
-  background-color: rgb(209, 205, 205);
+  background-color: #DBB165;
   border: 2px solid black;
   border-radius: 2px;
+  text-align: center;
 }
 
-.headers > th {
+.headers>th {
   padding-left: 5px;
   padding-right: 5px;
   font-size: 1em;
   text-align: start;
-  background-color: grey;
+  background-color: #d3615b;
   border: 2px solid black;
   border-radius: 2px;
   font-size: 1.1em;
+
 }
 
-.headers > td > input {
+.headers>td>input {
   width: 80px;
   border: transparent;
   background-color: inherit;
+  text-align: center;
 }
 
-.bodies > td {
+.bodies>td {
   width: 80px;
-  background-color: rgb(149, 255, 149);
+  background-color: #e6c0a1;
   border: 2px solid black;
   border-radius: 2px;
+
 }
 
-.bodies > td > input {
+.bodies>td>input {
   width: 80px;
   border: transparent;
   background-color: rgba(172, 172, 172, 0);
+  text-align: center;
 }
 
-.bodies > th {
+.bodies>th {
   padding-left: 5px;
   padding-right: 5px;
   font-weight: normal;
   text-align: start;
   border: 2px solid black;
-  background-color: white;
+  background-color: #DBB165;
 }
 
-.bodies > td:nth-child(odd) {
+.bodies>td:nth-child(odd) {
   width: 80px;
-  background-color: white;
+  background-color: #dd998d;
   border-radius: 2px;
 }
 
@@ -181,6 +190,8 @@ table {
   background-color: #042d56;
   color: #fbf7e8;
 }
+
 .black-cells {
   background-color: rgb(209, 205, 205) !important;
+
 }

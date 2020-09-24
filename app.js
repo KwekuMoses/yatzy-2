@@ -37,11 +37,11 @@ function counter(count, playerCounter, inputArray) {
   let playerName = document.querySelectorAll(".playerName");
   let currentPlayerNumber = inputArray[playerCounter].number;
 
-  playerName[currentPlayerNumber].parentElement.style.backgroundColor = "orange";
+  playerName[currentPlayerNumber].parentElement.style.backgroundColor = "#76A08A";
   if (count === 0) {
     button.innerHTML = "Nästa spelare: kasta tärningarna (3 kast kvar)";
     playerName[currentPlayerNumber].parentElement.style.backgroundColor =
-      "rgb(209, 205, 205)";
+      "#DBB165";
   } else {
     button.innerHTML = count + " kast kvar";
   }

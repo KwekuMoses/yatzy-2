@@ -20,21 +20,21 @@
   <div id="reload-start">
     <label for="start-button" class="start-knapp" id="start-reload-label">Fyll i spelarnas namn och tryck</label>
     <input type="button" value="Start" name="start-button" id="start-button">
-  </div>  
+  </div>
   <div class="enclosure">
-    <form   id="whole-form" class="whole-table">
-      <table>  
+    <form id="whole-form" class="whole-table">
+      <table>
         <tbody>
           <tr class="headers">
             <th>Spelare/Player</th>
-            <td><input type="text" class="playerName"></td>
-            <td><input type="text" class="playerName"/></td>
-            <td><input type="text" class="playerName"/></td>
-            <td><input type="text" class="playerName"/></td>
+            <td><input type="text" placeholder="player1" class="playerName"></td>
+            <td><input type="text" placeholder="player2" class="playerName" /></td>
+            <td><input type="text" placeholder="player3" class="playerName" /></td>
+            <td><input type="text" placeholder="player4" class="playerName" /></td>
           </tr>
           <tr class="bodies">
             <th>Ettor/Ones</th>
-            <td><input type="number" class="player-0" ></td>
+            <td><input type="number" class="player-0"></td>
             <td><input type="number" class="player-1" /></td>
             <td><input type="number" class="player-2" /></td>
             <td><input type="number" class="player-3" /></td>
@@ -162,56 +162,56 @@
           </tr>
         </tfoot>
       </table>
-      
+
     </form>
     <div id="dices-section">
       <form>
-        
-          <div>
-              <img class="diceArray" src="/dices/dice1.webp">
-              <label for="dice1"></label>
-              <input type="checkbox" class="checkBox" name="checkBox1">
-          </div> 
 
-          <div>
-              <img class="diceArray" src="/dices/dice2.webp">
-              <label for="dice2"></label>
-              <input type="checkbox" class="checkBox" name="checkBox2">
-          </div>
+        <div>
+          <img class="diceArray" src="/dices/dice1.webp">
+          <label for="dice1"></label>
+          <input type="checkbox" class="checkBox" name="checkBox1">
+        </div>
 
-          <div>
-              <img class="diceArray" src="/dices/dice3.webp">
-              <label for="dice3"></label>
-              <input type="checkbox" class="checkBox" name="checkBox3">
-          </div>
-          
-          <div>
-              <img class="diceArray" src="/dices/dice4.webp">
-              <label for="dice4"></label>
-              <input type="checkbox" class="checkBox" name="checkBox4">
-          </div>
+        <div>
+          <img class="diceArray" src="/dices/dice2.webp">
+          <label for="dice2"></label>
+          <input type="checkbox" class="checkBox" name="checkBox2">
+        </div>
 
-          <div>
-              <img class="diceArray" src="/dices/dice5.webp">
-              <label for="dice5"></label>
-              <input type="checkbox" class="checkBox" name="checkbox5">
-          </div>
+        <div>
+          <img class="diceArray" src="/dices/dice3.webp">
+          <label for="dice3"></label>
+          <input type="checkbox" class="checkBox" name="checkBox3">
+        </div>
+
+        <div>
+          <img class="diceArray" src="/dices/dice4.webp">
+          <label for="dice4"></label>
+          <input type="checkbox" class="checkBox" name="checkBox4">
+        </div>
+
+        <div>
+          <img class="diceArray" src="/dices/dice5.webp">
+          <label for="dice5"></label>
+          <input type="checkbox" class="checkBox" name="checkbox5">
+        </div>
 
       </form>
       <button id="throw-dice" class="throw-dice" type="button">Kasta tärningarna</button>
       <div class="chat">
         <div class="text-mock">
 
-      </div>
+        </div>
         <div id="chat-input">
-          <input id="chat_name_input" type="text"placeholder="name">
+          <input id="chat_name_input" type="text" placeholder="name">
           <input id="chat_input" type="text" placeholder="Aa">
           <button id="chat-btn" class="submit-button" placeholder="Aa">Submit</button>
         </div>
       </div>
-  </div>
-  <script src="app.js"></script>
-  <script src="RandomDices.js"></script>
+    </div>
+    <script src="app.js"></script>
+    <script src="RandomDices.js"></script>
 </body>
 
 </html>
