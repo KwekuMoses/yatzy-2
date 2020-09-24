@@ -37,10 +37,11 @@ function counter(count, playerCounter, inputArray) {
   let playerName = document.querySelectorAll(".playerName");
   let currentPlayerNumber = inputArray[playerCounter].number;
 
-  playerName[currentPlayerNumber].style.backgroundColor = "orange";
+  playerName[currentPlayerNumber].parentElement.style.backgroundColor = "orange";
   if (count === 0) {
     button.innerHTML = "Nästa spelare: kasta tärningarna (3 kast kvar)";
-    playerName[currentPlayerNumber].style.backgroundColor = "rgb(209, 205, 205)";
+    playerName[currentPlayerNumber].parentElement.style.backgroundColor =
+      "rgb(209, 205, 205)";
   } else {
     button.innerHTML = count + " kast kvar";
   }
@@ -113,14 +114,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   start.addEventListener("click", function (e) {
     start.remove();
+
     let reload = document.createElement("input");
     reload.setAttribute("type", "button");
     reload.setAttribute("value", "Börja om");
     reloadStart.appendChild(reload);
+    document.getElementById("start-reload-label").innerHTML = "Ny runda?";
+
     reload.addEventListener("click", function (e) {
       location.reload();
     });
-    console.log(start);
+
     activePlayers = createPlayers(amountOfPlayers()); //creating an object for each player
     throwButton.addEventListener("click", function (e) {
       counter(count, playerCounter, activePlayers);

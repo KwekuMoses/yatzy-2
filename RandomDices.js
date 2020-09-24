@@ -1,7 +1,7 @@
 class Dice {
   constructor() {
     this.dice = [];
-    this.dice_values = [0, 0, 0, 0, 0, 0, 0];
+    this.dice_values = [0, 0, 0, 0, 0, 0, 0]; //*För att kolla händerna/
 
     this.calculateDiceValues();
   }

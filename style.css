@@ -117,7 +117,7 @@ table {
 
 .bodies > td {
   width: 80px;
-  background-color: darkgrey;
+  background-color: rgb(149, 255, 149);
   border: 2px solid black;
   border-radius: 2px;
 }
@@ -147,7 +147,7 @@ table {
   background-color: rgba(0, 0, 0, 0.2);
   width: 500px;
   margin-right: 50px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .text-mock {
