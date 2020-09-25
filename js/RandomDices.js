@@ -98,7 +98,7 @@ class Die {
     this.value = this.throw_die();
     this.diceImg(this.value);
   }
-
+  //this method sets
   diceImg(args) {
     let temp = document.querySelectorAll(".diceArray");
     temp[this.name].setAttribute("src", "dices/dice" + args + ".webp");

@@ -1,5 +1,3 @@
-
-
 //function to count how many throws are left for current player
 function counter(count, playerCounter, inputArray) {
   let button = document.getElementById("throw-dice");
@@ -7,14 +5,12 @@ function counter(count, playerCounter, inputArray) {
   let currentPlayerNumber = inputArray[playerCounter].number;
 
   //green color is set to player
-  playerName[currentPlayerNumber].parentElement.style.backgroundColor =
-    "#76A08A";
+  playerName[currentPlayerNumber].parentElement.style.backgroundColor = "#76A08A";
 
   //when count hits zero color is set to default and next player is selected
   if (count === 0) {
     button.innerHTML = "Nästa spelare: kasta tärningarna (3 kast kvar)";
-    playerName[currentPlayerNumber].parentElement.style.backgroundColor =
-      "#DBB165";
+    playerName[currentPlayerNumber].parentElement.style.backgroundColor = "#DBB165";
   } else {
     button.innerHTML = count + " kast kvar";
   }
@@ -66,9 +62,7 @@ function disableCells() {
 function enableCells(inputArray) {
   for (let i = 0; i < inputArray.length; i++) {
     for (let j = 0; j < 15; j++) {
-      let playerCells = document.getElementsByClassName(
-        `player-${inputArray[i]}`
-      );
+      let playerCells = document.getElementsByClassName(`player-${inputArray[i]}`);
       playerCells[j].disabled = false;
       playerCells[j].parentElement.classList.remove("black-cells");
     }
@@ -132,17 +126,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   //Chatinput
   document.querySelector("#chat-btn").addEventListener("click", function (e) {
-    let chatbox = document.querySelector(".text-mock");
-    let nameInputSpan = document.createElement("span");
-    let chatSpan = document.createElement("span");
-
+    //Creats variable that has the input field as refferencse
     let chatInput = document.getElementById("chat_input");
     let chatInputName = document.getElementById("chat_name_input");
-
+    //Creats variable with the chat area as refference
+    let chatbox = document.querySelector(".text-mock");
+    //Creating new elements/nodes
+    let nameInputSpan = document.createElement("span");
+    let chatSpan = document.createElement("span");
+    //Setting created Element property to user input value
     nameInputSpan.innerHTML = "<br>" + chatInputName.value + ": ";
     chatSpan.innerHTML = chatInput.value;
+    //Setting new class attribute
     nameInputSpan.setAttribute("class", "user");
-
+    //Giving chatbox childNodes, will now be shown in chatbox ".text-mock"
     chatbox.appendChild(nameInputSpan);
     chatbox.appendChild(chatSpan);
   });
