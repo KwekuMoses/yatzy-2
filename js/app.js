@@ -25,7 +25,6 @@ function amountOfPlayers() {
   let playersArrayStrings = players.map((element) => {
     return String(element.value);
   });
-
   let outputArray = [];
 
   for (let i = 0; i < playersArrayStrings.length; i++) {
@@ -36,15 +35,14 @@ function amountOfPlayers() {
   return outputArray;
 }
 
-// a function that creates the needed amount of player objects
+// a function that creates the needed amount of player objects based on outputArray from amountofplayers
 function createPlayers(inputArray) {
-  //let amount = inputArray.length;
   let createdPlayersArray = [];
   for (let i = 0; i < inputArray.length; i++) {
     createdPlayersArray.push(new Player(inputArray[i]));
   }
   enableCells(inputArray);
-  console.log(createdPlayersArray);
+
   return createdPlayersArray;
 }
 // a function that disables all cells
@@ -78,14 +76,17 @@ function outPutCalcSum(players) {
 document.addEventListener("DOMContentLoaded", function (e) {
   let reloadStart = document.getElementById("reload-start");
   let start = document.getElementById("start-button");
-  let dices = new Dice();
   let wholeForm = document.getElementById("whole-form");
-  let activePlayers = [];
   let throwButton = document.getElementById("throw-dice");
+
+  let dices = new Dice();
+  let activePlayers = [];
+
   let count = 2;
   let playerCounter = 0;
 
   disableCells();
+
   //event listener that starts the game
   start.addEventListener("click", function (e) {
     start.remove();
@@ -131,16 +132,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
     //Creats variable that has the input field as refferencse
     let chatInput = document.getElementById("chat_input");
     let chatInputName = document.getElementById("chat_name_input");
+
     //Creats variable with the chat area as refference
     let chatbox = document.querySelector(".text-mock");
+
     //Creating new elements/nodes
     let nameInputSpan = document.createElement("span");
     let chatSpan = document.createElement("span");
+
     //Setting created Element property to user input value
     nameInputSpan.innerHTML = "<br>" + chatInputName.value + ": ";
     chatSpan.innerHTML = chatInput.value;
+
     //Setting new class attribute
     nameInputSpan.setAttribute("class", "user");
+
     //Giving chatbox childNodes, will now be shown in chatbox ".text-mock"
     chatbox.appendChild(nameInputSpan);
     chatbox.appendChild(chatSpan);

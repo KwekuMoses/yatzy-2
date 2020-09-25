@@ -4,7 +4,7 @@ class Dice {
     this.dice_values = [0, 0, 0, 0, 0, 0, 0];
     this.checkboxes = Array.from(document.getElementsByClassName("checkBox"));
   }
-
+  //called when throwbutton is triggered
   userThrow() {
     for (let i = 0; i < 5; i++) {
       if (!this.checkboxes[i].checked) {
@@ -12,24 +12,24 @@ class Dice {
       }
     }
   }
+  //method to uncheck checboxes
   uncheck() {
     for (let checkbox of this.checkboxes) {
       checkbox.checked = false;
     }
   }
 
+  //called when throwbutton is triggered
   calculateDiceValues() {
     this.dice_values = [0, 0, 0, 0, 0, 0, 0]; //*För att kolla händerna/
-    console.log(this.dice);
     this.dice.map((currentValue) => {
       this.dice_values[currentValue.value]++;
-      console.log(this.dice_values);
     });
   }
 
+  //called when throwbutton is triggered
   diceValues() {
     let countValues = this.dice_values;
-    let twoPairs = [];
     if (countValues.includes(5)) {
       //checks for yatzy
       console.log("Yatzy!");
@@ -84,7 +84,7 @@ class Dice {
 
       let sum = countValues.indexOf(2) * 2;
       console.log(sum);
-      twoPairs = countValues.filter((element) => element == 2);
+      let twoPairs = countValues.filter((element) => element == 2);
       if (twoPairs.length > 1) {
         console.log("två par!");
       }
