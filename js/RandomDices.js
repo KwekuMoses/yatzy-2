@@ -98,11 +98,12 @@ class Die {
     this.value = this.throw_die();
     this.diceImg(this.value);
   }
-  //this method sets
+  //a method to change the dice images
   diceImg(args) {
-    let temp = document.querySelectorAll(".diceArray");
-    temp[this.name].setAttribute("src", "dices/dice" + args + ".webp");
+    let diceArray = document.querySelectorAll(".diceArray");
+    diceArray[this.name].setAttribute("src", "dices/dice" + args + ".webp");
   }
+  //method to generate a random number later representated as a die
   throw_die() {
     let randomDice = Math.floor(Math.random() * (7 - 1) + 1);
     return randomDice;

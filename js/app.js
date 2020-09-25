@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   let playerCounter = 0;
 
   disableCells();
-
+  //event listener that starts the game
   start.addEventListener("click", function (e) {
     start.remove();
 
@@ -96,11 +96,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
     reloadStart.appendChild(reload);
     document.getElementById("start-reload-label").innerHTML = "Ny runda?";
 
+    //event listener tthat refreshes the page
     reload.addEventListener("click", function (e) {
       location.reload();
     });
 
     activePlayers = createPlayers(amountOfPlayers()); //creating an object for each player
+
     throwButton.addEventListener("click", function (e) {
       counter(count, playerCounter, activePlayers);
       dices.userThrow();
